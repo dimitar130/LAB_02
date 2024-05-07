@@ -1,0 +1,36 @@
+﻿@model List<LAB_02.Models.EventModel>
+@{
+    ViewBag.Title = "ShowAllEvents";
+}
+
+<h2>All available events for you : </h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td class="fw-bold">Ime</td>
+            <td class="fw-bold">Lokacija</td>
+            <td class="fw-bold">Id</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    @{
+        //int i = 0;
+        foreach (var e in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(e.Ime, "ShowEvent", new { id = e.Id })</td>
+                <td>@e.Lokacija</td>
+                <td>@e.Id</td>
+                <td>@Html.ActionLink("Edit", "EditEvent", new { id = e.Id })</td> @*implementiraj akcija vo kontroler*@
+                <td>@Html.ActionLink("Delete", "DeleteEvent", new { id = e.Id })</td> @*implementiraj akcija vo kontroler*@
+
+            </tr>
+            //i++;
+        }
+    }
+
+</table>
+@Html.ActionLink("Add New Event", "AddEvent", "Event")
+

@@ -1,0 +1,14 @@
+﻿@model LAB_02.Models.EventModel
+@{
+    ViewBag.Title = "ShowEvent";
+}
+
+<h2>Ime: @Model.Ime</h2>
+<h2>Lokacija: @Model.Lokacija</h2>
+<h3 class="mb-3">Id: @Model.Id</h3>
+
+@Html.ActionLink("Back","ShowAllEvents")
+
+
+
+
